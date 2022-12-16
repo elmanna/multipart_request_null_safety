@@ -22,9 +22,9 @@ public class MultipartRequest {
 
     public void sendMultipartRequest(String url, Map<String, String> headers, Map<String, String> fields, ArrayList<Object> files, ProgressRequestBody.Listener listener) throws Exception {
         OkHttpClient client = new OkHttpClient.Builder()
-                .connectTimeout(120, TimeUnit.SECONDS)
-                .writeTimeout(60, TimeUnit.MINUTES)
-                .readTimeout(60, TimeUnit.MINUTES)
+                .connectTimeout(40, TimeUnit.MINUTES)
+                .writeTimeout(40, TimeUnit.MINUTES)
+                .readTimeout(40, TimeUnit.MINUTES)
                 .build();
 
         MultipartBody.Builder requestBodyBuilder = new MultipartBody.Builder().setType(MultipartBody.FORM);
